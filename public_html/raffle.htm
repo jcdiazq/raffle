@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gran Rifa Solidaria - Sorteo de Dos Bicicleta Todo Terreno</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/raffle.css" type="text/css">
+    <link rel="stylesheet" href="css/stage.css" type="text/css">
+</head>
+
+<body class="container mx-auto text-center">
+    <div class="grid grid-cols-1 md:grid-cols-3">
+        <div>
+            <img src="img/bicicleta1.jpg">
+        </div>
+        <div>
+            <div class="grid grid-cols-1">
+                <div id="stage" class="col-span-2 bg-3">
+                    <h1 data-shadow='Gran Rifa Solidaria'>Gran Rifa Solidaria</h1>
+                    <h3>Selecciona tu número y participa<br><span class="light">Son 2 Excelentes Bicicletas Todo Terreno<br>"Dama y Caballero".</span></h3>
+                    <h4>Sorteo Próximo 24 de Febrero del 2021 con la Loteria del Valle.<br>Bono de 100 mil pesos.</h4>
+                </div>
+                <div class="container grid grid-cols-2 grid-rows-3">
+                    <div class="row-span-3">
+                        <a href="#popup">
+                            <div id="playbutton" class="grid-play-contents button">
+                                <span></span>
+                            </div>
+                        </a>
+                        <p><strong id="status"></strong></p>
+                    </div>
+                    <div>
+                        <div id="upbutton" class="grid-up-contents button"><span></span></div>
+                    </div>
+                    <div>
+                        <div class="wheel-contents">
+                            <div id="num1" class="number"></div>
+                            <div id="num2" class="number"></div>
+                            <strong><div id="num3" class="number"></div></strong>
+                            <div id="num4" class="number"></div>
+                            <div id="num5" class="number"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="downbutton" class="grid-down-contents button"><span></span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="img/bicicleta2.jpg">
+        </div>
+
+    </div>
+    <div id="popup" class="overlay">
+        <div id="popupBody">
+            <h2 data-shadow="Gran Asistencia Solidaria">Gran<br>Asistencia Solidaria</h2>
+            <a id="close" href="#">&times;</a>
+            <form id="raffle_form" action="javascript:void(0);">
+                <div>
+                    <p id="numtext"></p>
+                    <p><input id="selected" class="num" type="number" name="number" value="0" min="0" max="99" required></p>
+                </div>
+                <div class="popupContent">
+                    <p><label for="name">Digite su Nombre:</label><input id="name" type="text" name="name" placeholder="Nombre" pattern="([aA-zZ, ]){3,15}" required></p>
+                    <p><label for="number_phone">Número de Celular:</label> <input id="number_phone" type="tel" name="number_phone" placeholder="Celular" pattern="[0-9]{10}" required></p>
+                    <p>
+                        <a href="#alert"><input type="submit" value="Enviar"></a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="alert" class="alertOverlay">
+        <div id="popupBody">
+            <p><a id="close" href="#">&times;</a></p><br>
+            <p><strong id="alertStatus"></strong></p>
+        </div>
+    </div>
+    <script src="js/raffle/play.js"></script>
+</body>
+
+</html>
